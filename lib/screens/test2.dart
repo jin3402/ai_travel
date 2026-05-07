@@ -11,14 +11,9 @@ class TravelApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // 디버그 배너를 숨겨서 화면을 깔끔하게 만듭니다.
       debugShowCheckedModeBanner: false,
-      // 앱의 전반적인 테마를 설정합니다.
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: Colors.white,
-        // Inter 폰트를 사용하려면 폰트 파일을 프로젝트에 추가하고
-        // pubspec.yaml 파일에 등록해야 합니다.
-        // 설정하지 않았다면 이 부분은 주석 처리해야 오류가 나지 않습니다.
         textTheme: const TextTheme(
           bodyMedium: TextStyle(color: Colors.black /*, fontFamily: 'Inter'*/),
         ),
@@ -36,8 +31,6 @@ class SurveyScreen extends StatefulWidget {
 }
 
 class _SurveyScreenState extends State<SurveyScreen> {
-  // 실제 앱에서는 이 값들이 버튼 클릭에 따라 변경되어야 합니다.
-  // 예: int currentQuestion = 1;
   final int currentQuestion = 3;
   final int totalQuestions = 7;
   final double progress = 0.29; // 29%

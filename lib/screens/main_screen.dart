@@ -12,8 +12,6 @@ class TravelApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // 폰트를 적용하려면 pubspec.yaml 파일에 폰트 추가가 필요합니다.
-        // fontFamily: 'Noto Sans KR',
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
@@ -57,7 +55,6 @@ const List<Map<String, String>> recommendedPlaces = [
     "title": "왓 포 사원"
   },
 ];
-// -- 데이터 끝 --
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

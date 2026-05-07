@@ -5,19 +5,14 @@ void main() {
 }
 
 class TravelApp extends StatelessWidget {
-  // const 생성자는 위젯의 성능을 향상시킵니다.
   const TravelApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // 디버그 배너를 숨겨서 화면을 깔끔하게 만듭니다.
       debugShowCheckedModeBanner: false,
-      // 앱의 전반적인 테마를 설정합니다.
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: Colors.white,
-        // Inter 폰트를 사용하려면 폰트 파일을 프로젝트에 추가하고
-        // pubspec.yaml 파일에 등록해야 합니다.
         textTheme: const TextTheme(
           bodyMedium: TextStyle(color: Colors.black, fontFamily: 'Inter'),
         ),
@@ -35,7 +30,6 @@ class SurveyScreen extends StatefulWidget {
 }
 
 class _SurveyScreenState extends State<SurveyScreen> {
-  // 실제 앱에서는 이 값들이 버튼 클릭에 따라 변경되어야 합니다.
   final int currentQuestion = 3;
   final int totalQuestions = 7;
   final double progress = 0.29; // 29%
@@ -53,8 +47,6 @@ class _SurveyScreenState extends State<SurveyScreen> {
               const SizedBox(height: 40),
               _buildProgress(),
               
-              // --- 수정된 부분 ---
-              // Spacer를 질문 위/아래로 옮겨서 질문과 답변을 하나의 그룹으로 묶습니다.
               const Spacer(flex: 1), // 콘텐츠를 위에서 밀어내는 역할
               _buildQuestion(),
               const SizedBox(height: 40), // 질문과 답변 사이의 고정 간격

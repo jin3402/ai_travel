@@ -14,7 +14,7 @@ class AuthApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
-        fontFamily: 'Urbanist', // 폰트 적용 (pubspec.yaml에 추가 필요)
+        fontFamily: 'Urbanist', 
       ),
       home: const LoginScreen(),
     );
@@ -106,7 +106,7 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             child: const Text(
-              '로그인', // Figma의 '등록'을 '로그인'으로 수정
+              '로그인', 
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 15,

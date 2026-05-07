@@ -10,8 +10,6 @@ class TravelApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // 기본 폰트를 Inter로 설정하려면 pubspec.yaml에 폰트 추가 필요
-      // fontFamily: 'Inter',
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: Colors.white,
         textTheme: const TextTheme(
@@ -31,7 +29,7 @@ class SurveyScreen extends StatefulWidget {
 }
 
 class _SurveyScreenState extends State<SurveyScreen> {
-  // UI의 동적인 값들을 변수로 관리하면 데이터 변경이 쉬워집니다.
+  
   final int currentQuestion = 3;
   final int totalQuestions = 7;
   final double progress = 0.29; // 29%
@@ -39,18 +37,16 @@ class _SurveyScreenState extends State<SurveyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // SafeArea는 디바이스의 상단 노치나 하단 바 영역을 침범하지 않게 해줍니다.
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
           child: Column(
-            // Column을 사용해 위젯들을 수직으로 배치합니다.
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _buildHeader(),
               const SizedBox(height: 40),
               _buildProgress(),
-              const Spacer(flex: 2), // 공간을 유연하게 채웁니다.
+              const Spacer(flex: 2), 
               _buildQuestion(),
               const SizedBox(height: 40),
               _buildAnswerOptions(),

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-// 전화 기능을 사용하려면 pubspec.yaml 파일에 url_launcher를 추가해야 합니다.
-// import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const EmergencyContactApp());
@@ -14,10 +12,9 @@ class EmergencyContactApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // 앱의 전반적인 색상과 폰트 테마를 설정합니다.
         scaffoldBackgroundColor: Colors.white,
         primaryColor: const Color(0xFF3B82F6),
-        fontFamily: 'Pretendard', // 앱 전체에 적용할 기본 폰트
+        fontFamily: 'Pretendard', 
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
           foregroundColor: Colors.black,
@@ -130,19 +127,7 @@ class ContactCard extends StatelessWidget {
     required this.phoneNumber,
   });
 
-  // 전화 거는 함수
-  // Future<void> _makePhoneCall(String phoneNumber) async {
-  //   final Uri launchUri = Uri(
-  //     scheme: 'tel',
-  //     path: phoneNumber,
-  //   );
-  //   if (await canLaunchUrl(launchUri)) {
-  //     await launchUrl(launchUri);
-  //   } else {
-  //     // 전화를 걸 수 없는 경우 에러 처리
-  //     throw 'Could not launch $phoneNumber';
-  //   }
-  // }
+
 
   @override
   Widget build(BuildContext context) {

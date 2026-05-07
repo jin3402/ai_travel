@@ -14,7 +14,7 @@ class TravelApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
-        fontFamily: 'Noto Sans KR', // 폰트 적용 (pubspec.yaml에 추가 필요)
+        fontFamily: 'Noto Sans KR', 
       ),
       home: const TokyoTowerDetailScreen(),
     );
