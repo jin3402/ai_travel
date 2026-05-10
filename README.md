@@ -1,4 +1,4 @@
-# ✈️ AI_TRAVEL (스마트 해외여행 가이드 앱)
+# ✈️ AI_TRAVEL (스마트 해외여행 가이드 앱) -마이크로스톤 팀프로젝트-
 
 > **"사용자의 여행 성향 분석부터 필수 정보 제공까지, 매끄러운 사용자 경험(UX)에 집중한 크로스 플랫폼 프로젝트입니다."**
 
@@ -43,7 +43,7 @@
 
 * **Framework:** Flutter (Dart >= 3.2.3)
 * **UI Components:** Material 3 Design
-* **Assets Handling:** `flutter_svg` (해상도 최적화를 위한 벡터 그래픽 처리)
+* figma
 
 <br>
 
