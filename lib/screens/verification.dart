@@ -68,7 +68,7 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
   late List<FocusNode> _focusNodes;
   late List<TextEditingController> _controllers;
 
-  late Timer _timer;
+  Timer? _timer;
   int _start = 30;
 
   @override
@@ -80,6 +80,8 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
   }
 
   void startTimer() {
+    // 이전 타이머가 남아 있으면 두 개가 동시에 줄어들어서 먼저 멈춰요.
+    _timer?.cancel();
     _start = 30; // 타이머 초기화
     _timer = Timer.periodic(
       const Duration(seconds: 1),
@@ -105,7 +107,7 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
     for (var focusNode in _focusNodes) {
       focusNode.dispose();
     }
-    _timer.cancel();
+    _timer?.cancel();
     super.dispose();
   }
 
@@ -156,7 +158,7 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
               Text(
                 '${widget.email} 님에게 코드를 보냈습니다.',
                 style: TextStyle(
-                  color: Colors.black.withOpacity(0.7),
+                  color: Colors.black.withValues(alpha: 0.7),
                   fontSize: 16,
                 ),
               ),
@@ -192,7 +194,7 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
                 child: ElevatedButton(
                   onPressed: () {
                     final code = _controllers.map((c) => c.text).join();
-                    print('입력된 코드: $code');
+                    debugPrint('입력된 코드: $code');
                     // 코드 확인 로직
                   },
                   child:
@@ -207,7 +209,9 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
                   TextButton(
                     onPressed: _start == 0
                         ? () {
-                            startTimer();
+                            // setState 안에서 다시 시작해야 버튼이 바로 비활성화돼서
+                            // 연속으로 눌러 타이머가 두 개 도는 일이 없어요.
+                            setState(startTimer);
                             // 코드 재전송 로직
                           }
                         : null,
@@ -225,7 +229,7 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
                   Text(
                     '00:${_start.toString().padLeft(2, '0')}',
                     style: TextStyle(
-                      color: Colors.black.withOpacity(0.7),
+                      color: Colors.black.withValues(alpha: 0.7),
                       fontSize: 16,
                     ),
                   )

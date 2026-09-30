@@ -139,7 +139,7 @@ class ContactCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         side: BorderSide(color: Colors.grey[300]!, width: 1),
       ),
-      shadowColor: Colors.black.withOpacity(0.1),
+      shadowColor: Colors.black.withValues(alpha: 0.1),
       child: ListTile(
         contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
         title: Text(name, style: textTheme.titleLarge),
@@ -149,7 +149,7 @@ class ContactCard extends StatelessWidget {
               Icon(Icons.call, color: Theme.of(context).primaryColor, size: 28),
           onPressed: () {
             // _makePhoneCall(phoneNumber);
-            print('$phoneNumber 번호로 전화를 겁니다.');
+            debugPrint('$phoneNumber 번호로 전화를 겁니다.');
           },
         ),
       ),

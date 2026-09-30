@@ -36,7 +36,7 @@ class TokyoTowerDetailScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
             // TODO: 뒤로가기 로직 (Navigator.pop(context))
-            print("뒤로가기 버튼 클릭");
+            debugPrint("뒤로가기 버튼 클릭");
           },
         ),
         title: const Text(
@@ -170,7 +170,7 @@ class TokyoTowerDetailScreen extends StatelessWidget {
                     // url_launcher 패키지를 사용하면 실제 웹사이트로 이동 가능합니다.
                     // final Uri uri = Uri.parse(url);
                     // launchUrl(uri);
-                    print('홈페이지 링크 클릭: $url');
+                    debugPrint('홈페이지 링크 클릭: $url');
                   },
                   child: Text(
                     url,

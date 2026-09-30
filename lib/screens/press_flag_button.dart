@@ -232,8 +232,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return FloatingActionButton(
       onPressed: () {},
       backgroundColor: Colors.black,
-      child: const Icon(Icons.add, color: Colors.white),
       shape: const CircleBorder(),
+      child: const Icon(Icons.add, color: Colors.white),
     );
   }
 
@@ -287,7 +287,7 @@ class DestinationDetailScreen extends StatelessWidget {
         background: Image.network(
           destination['image']!,
           fit: BoxFit.cover,
-          color: Colors.black.withOpacity(0.3),
+          color: Colors.black.withValues(alpha: 0.3),
           colorBlendMode: BlendMode.darken,
         ),
       ),

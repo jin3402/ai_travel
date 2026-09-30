@@ -15,7 +15,7 @@ class FigmaToCodeApp extends StatelessWidget {
         scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
       ),
       home: Scaffold(
-        body: ListView(children: [
+        body: ListView(children: const [
           Jrsc(),
         ]),
       ),
@@ -24,6 +24,8 @@ class FigmaToCodeApp extends StatelessWidget {
 }
 
 class Jrsc extends StatelessWidget {
+  const Jrsc({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -32,16 +34,16 @@ class Jrsc extends StatelessWidget {
           width: 393,
           height: 852,
           clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(color: Colors.white),
+          decoration: const BoxDecoration(color: Colors.white),
           child: Stack(
             children: [
-              Positioned(
+              const Positioned(
                 left: 133,
                 top: 724,
                 child: Text(
                   '> 추천 여행지 확인하기',
                   style: TextStyle(
-                    color: const Color(0xFF4E4E4E),
+                    color: Color(0xFF4E4E4E),
                     fontSize: 13,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w500,
@@ -49,7 +51,7 @@ class Jrsc extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 304,
                 top: 524,
                 child: Text.rich(
@@ -80,7 +82,7 @@ class Jrsc extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 330,
                 top: 555,
                 child: Text(
@@ -101,13 +103,13 @@ class Jrsc extends StatelessWidget {
                 child: Container(
                   width: 35,
                   height: 35,
-                  decoration: ShapeDecoration(
-                    color: const Color(0xFFA791E7),
+                  decoration: const ShapeDecoration(
+                    color: Color(0xFFA791E7),
                     shape: OvalBorder(),
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 172,
                 top: 524,
                 child: Text.rich(
@@ -138,7 +140,7 @@ class Jrsc extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 185,
                 top: 555,
                 child: Text(
@@ -153,7 +155,7 @@ class Jrsc extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 40,
                 top: 524,
                 child: Text.rich(
@@ -184,7 +186,7 @@ class Jrsc extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 40,
                 top: 555,
                 child: Text(
@@ -199,7 +201,7 @@ class Jrsc extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 289,
                 top: 442,
                 child: Text.rich(
@@ -240,7 +242,7 @@ class Jrsc extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 330,
                 top: 473,
                 child: Text(
@@ -261,13 +263,13 @@ class Jrsc extends StatelessWidget {
                 child: Container(
                   width: 35,
                   height: 35,
-                  decoration: ShapeDecoration(
-                    color: const Color(0xFFA791E7),
+                  decoration: const ShapeDecoration(
+                    color: Color(0xFFA791E7),
                     shape: OvalBorder(),
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 40,
                 top: 442,
                 child: Text.rich(
@@ -298,7 +300,7 @@ class Jrsc extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 40,
                 top: 473,
                 child: Text(
@@ -313,7 +315,7 @@ class Jrsc extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 97,
                 top: 401,
                 child: SizedBox(
@@ -359,7 +361,7 @@ class Jrsc extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 282,
                 top: 360,
                 child: Text.rich(
@@ -390,7 +392,7 @@ class Jrsc extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 318,
                 top: 391,
                 child: Text(
@@ -411,13 +413,13 @@ class Jrsc extends StatelessWidget {
                 child: Container(
                   width: 35,
                   height: 35,
-                  decoration: ShapeDecoration(
-                    color: const Color(0xFFA791E7),
+                  decoration: const ShapeDecoration(
+                    color: Color(0xFFA791E7),
                     shape: OvalBorder(),
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 40,
                 top: 360,
                 child: Text.rich(
@@ -458,7 +460,7 @@ class Jrsc extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 40,
                 top: 391,
                 child: Text(
@@ -473,7 +475,7 @@ class Jrsc extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 97,
                 top: 319,
                 child: SizedBox(
@@ -519,7 +521,7 @@ class Jrsc extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 252,
                 top: 278,
                 child: Text.rich(
@@ -560,7 +562,7 @@ class Jrsc extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 318,
                 top: 309,
                 child: Text(
@@ -581,13 +583,13 @@ class Jrsc extends StatelessWidget {
                 child: Container(
                   width: 35,
                   height: 35,
-                  decoration: ShapeDecoration(
-                    color: const Color(0xFFA791E7),
+                  decoration: const ShapeDecoration(
+                    color: Color(0xFFA791E7),
                     shape: OvalBorder(),
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 40,
                 top: 278,
                 child: Text.rich(
@@ -628,7 +630,7 @@ class Jrsc extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 40,
                 top: 309,
                 child: Text(
@@ -643,7 +645,7 @@ class Jrsc extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 87,
                 top: 202,
                 child: SizedBox(
@@ -662,7 +664,7 @@ class Jrsc extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 87,
                 top: 120,
                 child: SizedBox(
@@ -686,7 +688,7 @@ class Jrsc extends StatelessWidget {
                 top: 87,
                 child: Container(
                   width: 30,
-                  decoration: ShapeDecoration(
+                  decoration: const ShapeDecoration(
                     shape: RoundedRectangleBorder(
                       side: BorderSide(
                         width: 1,
@@ -701,7 +703,7 @@ class Jrsc extends StatelessWidget {
                 top: 79,
                 child: Container(
                   width: 30,
-                  decoration: ShapeDecoration(
+                  decoration: const ShapeDecoration(
                     shape: RoundedRectangleBorder(
                       side: BorderSide(
                         width: 1,
@@ -716,7 +718,7 @@ class Jrsc extends StatelessWidget {
                 top: 71,
                 child: Container(
                   width: 30,
-                  decoration: ShapeDecoration(
+                  decoration: const ShapeDecoration(
                     shape: RoundedRectangleBorder(
                       side: BorderSide(
                         width: 1,
@@ -734,9 +736,9 @@ class Jrsc extends StatelessWidget {
                   height: 39,
                   decoration: ShapeDecoration(
                     shape: RoundedRectangleBorder(
-                      side: BorderSide(
+                      side: const BorderSide(
                         width: 1,
-                        color: const Color(0xFFD8DADC),
+                        color: Color(0xFFD8DADC),
                       ),
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -750,7 +752,7 @@ class Jrsc extends StatelessWidget {
                   width: 393,
                   height: 45,
                   clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   child: Stack(
                     children: [
                       Positioned(
@@ -764,7 +766,7 @@ class Jrsc extends StatelessWidget {
                               borderRadius: BorderRadius.circular(32),
                             ),
                           ),
-                          child: Stack(),
+                          child: const Stack(),
                         ),
                       ),
                     ],

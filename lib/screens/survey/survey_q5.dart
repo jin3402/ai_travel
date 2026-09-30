@@ -5,15 +5,18 @@ void main() {
 }
 
 class TravelApp extends StatelessWidget {
-  // const 생성자는 위젯의 성능을 향상시킵니다.
+  
   const TravelApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
       debugShowCheckedModeBanner: false,
+      
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: Colors.white,
+        
         textTheme: const TextTheme(
           bodyMedium: TextStyle(color: Colors.black /*, fontFamily: 'Inter'*/),
         ),
@@ -31,9 +34,10 @@ class SurveyScreen extends StatefulWidget {
 }
 
 class _SurveyScreenState extends State<SurveyScreen> {
-  final int currentQuestion = 3;
+  
+  final int currentQuestion = 5;
   final int totalQuestions = 7;
-  final double progress = 0.29; // 29%
+  final double progress = 0.57; // 57%
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +72,7 @@ class _SurveyScreenState extends State<SurveyScreen> {
           icon: const Icon(Icons.arrow_back, color: Colors.grey),
           onPressed: () {
             // TODO: 뒤로가기 로직 구현
-            print('뒤로가기 버튼 클릭됨');
+            debugPrint('뒤로가기 버튼 클릭됨');
           },
         ),
         const Text(
@@ -79,7 +83,7 @@ class _SurveyScreenState extends State<SurveyScreen> {
           icon: const Icon(Icons.menu, color: Colors.grey),
           onPressed: () {
             // TODO: 메뉴 로직 구현
-            print('메뉴 버튼 클릭됨');
+            debugPrint('메뉴 버튼 클릭됨');
           },
         ),
       ],
@@ -140,11 +144,11 @@ class _SurveyScreenState extends State<SurveyScreen> {
     );
   }
 
-  // 3. 질문 텍스트
+  // 3. 질문 텍스트 (새로운 내용으로 변경)
   Widget _buildQuestion() {
     return const Center(
       child: Text(
-        '나의 지출 스타일은?',
+        '나의 여행 스타일은?',
         style: TextStyle(
           fontSize: 22,
           fontWeight: FontWeight.w500,
@@ -153,13 +157,13 @@ class _SurveyScreenState extends State<SurveyScreen> {
     );
   }
 
-  // 4. 답변 선택지 버튼들
+  // 4. 답변 선택지 버튼들 (새로운 내용으로 변경)
   Widget _buildAnswerOptions() {
     return Column(
       children: [
-        _buildAnswerButton('가성비를 따져서 알뜰하게'),
+        _buildAnswerButton('내가 언제 여길 다시 오겠어?\n이곳저곳 바쁘게 돌아다니는 편'),
         const SizedBox(height: 24),
-        _buildAnswerButton('돈을 좀 쓰더라도\n하고 싶은 건 다 한다!'),
+        _buildAnswerButton('여유로운 게 좋아\n느긋하게 한두 곳만 파는 편'),
       ],
     );
   }
@@ -170,7 +174,7 @@ class _SurveyScreenState extends State<SurveyScreen> {
       child: ElevatedButton(
         onPressed: () {
           // TODO: 답변 선택 시 로직 구현 (다음 질문으로 넘어가기 등)
-          print('$text 선택!');
+          debugPrint('$text 선택!');
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xFFC3E0FC),
@@ -194,3 +198,4 @@ class _SurveyScreenState extends State<SurveyScreen> {
     );
   }
 }
+

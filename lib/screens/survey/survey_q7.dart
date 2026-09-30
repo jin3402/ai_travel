@@ -5,15 +5,20 @@ void main() {
 }
 
 class TravelApp extends StatelessWidget {
+  // const 생성자는 위젯의 성능을 향상시킵니다.
   const TravelApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
+      debugShowCheckedModeBanner: false,
+      
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: Colors.white,
+        
         textTheme: const TextTheme(
-          bodyMedium: TextStyle(color: Colors.black, fontFamily: 'Inter'),
+          bodyMedium: TextStyle(color: Colors.black /*, fontFamily: 'Inter'*/),
         ),
       ),
       home: const SurveyScreen(),
@@ -30,9 +35,9 @@ class SurveyScreen extends StatefulWidget {
 
 class _SurveyScreenState extends State<SurveyScreen> {
   
-  final int currentQuestion = 3;
+  final int currentQuestion = 7;
   final int totalQuestions = 7;
-  final double progress = 0.29; // 29%
+  final double progress = 0.86; // 86%
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +51,7 @@ class _SurveyScreenState extends State<SurveyScreen> {
               _buildHeader(),
               const SizedBox(height: 40),
               _buildProgress(),
-              const Spacer(flex: 2), 
+              const Spacer(flex: 2),
               _buildQuestion(),
               const SizedBox(height: 40),
               _buildAnswerOptions(),
@@ -63,11 +68,11 @@ class _SurveyScreenState extends State<SurveyScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        // 아이콘 버튼으로 상호작용 추가
         IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.grey),
           onPressed: () {
-            // 뒤로가기 로직
+            // TODO: 뒤로가기 로직 구현
+            debugPrint('뒤로가기 버튼 클릭됨');
           },
         ),
         const Text(
@@ -77,14 +82,15 @@ class _SurveyScreenState extends State<SurveyScreen> {
         IconButton(
           icon: const Icon(Icons.menu, color: Colors.grey),
           onPressed: () {
-            // 메뉴 로직
+            // TODO: 메뉴 로직 구현
+            debugPrint('메뉴 버튼 클릭됨');
           },
         ),
       ],
     );
   }
 
-  // 2. 진행 상태 (Q3, 진행 바, 3/7)
+  // 2. 진행 상태 (질문 번호, 진행 바, 전체 질문 수)
   Widget _buildProgress() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -116,7 +122,6 @@ class _SurveyScreenState extends State<SurveyScreen> {
         const SizedBox(height: 20),
         Row(
           children: [
-            // Expanded를 사용해 남은 공간을 모두 차지하도록 함
             Expanded(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
@@ -139,47 +144,50 @@ class _SurveyScreenState extends State<SurveyScreen> {
     );
   }
 
-  // 3. 질문 텍스트
+  // 3. 질문 텍스트 (새로운 내용으로 변경)
   Widget _buildQuestion() {
     return const Center(
-      child: Text(
-        '나의 지출 스타일은?',
-        style: TextStyle(
-          fontSize: 22,
-          fontWeight: FontWeight.w500,
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        child: Text(
+          '여행 중 뜻밖의 상황이 생겼을 때의 나는?',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.w500,
+          ),
         ),
       ),
     );
   }
 
-  // 4. 답변 선택지 버튼들
+  // 4. 답변 선택지 버튼들 (새로운 내용으로 변경)
   Widget _buildAnswerOptions() {
     return Column(
       children: [
-        // 공통된 스타일의 버튼을 함수로 만들어 재사용
-        _buildAnswerButton('가성비를 따져서 알뜰하게'),
+        _buildAnswerButton('오히려 좋아!\n이것도 특별한 추억이지'),
         const SizedBox(height: 24),
-        _buildAnswerButton('돈을 좀 쓰더라도\n하고 싶은 건 다 한다!'),
+        _buildAnswerButton('예측 불가는 스트레스..\n웬만하면 피하고 싶어'),
       ],
     );
   }
 
   Widget _buildAnswerButton(String text) {
     return SizedBox(
-      width: double.infinity, // 너비를 최대로 설정
+      width: double.infinity,
       child: ElevatedButton(
         onPressed: () {
-          // 답변 선택 시 로직
-          print('$text 선택!');
+          // TODO: 마지막 질문이므로, 답변 선택 시 결과 페이지로 이동하는 로직 구현
+          debugPrint('$text 선택! 테스트 완료!');
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFFC3E0FC), // 배경색
-          foregroundColor: Colors.black, // 글자색
+          backgroundColor: const Color(0xFFC3E0FC),
+          foregroundColor: Colors.black,
           padding: const EdgeInsets.symmetric(vertical: 20),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),
-          elevation: 2, // 그림자 효과
+          elevation: 2,
         ),
         child: Text(
           text,
@@ -187,10 +195,11 @@ class _SurveyScreenState extends State<SurveyScreen> {
           style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w500,
-            height: 1.5, // 줄 간격
+            height: 1.5,
           ),
         ),
       ),
     );
   }
 }
+

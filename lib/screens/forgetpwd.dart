@@ -29,7 +29,7 @@ class ForgotPasswordApp extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             borderSide: const BorderSide(color: Color(0xFF46A46C), width: 2),
           ),
-          hintStyle: TextStyle(color: Colors.black.withOpacity(0.5)),
+          hintStyle: TextStyle(color: Colors.black.withValues(alpha: 0.5)),
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
         ),
@@ -94,7 +94,7 @@ class ForgotPasswordScreen extends StatelessWidget {
               Text(
                 '계정과 관련된 이메일을 입력해 주세요.',
                 style: TextStyle(
-                  color: Colors.black.withOpacity(0.7),
+                  color: Colors.black.withValues(alpha: 0.7),
                   fontSize: 16,
                 ),
               ),

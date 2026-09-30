@@ -69,7 +69,7 @@ class SignUpScreen extends StatelessWidget {
             ),
           ),
         ),
-        onPressed: () => print('뒤로가기 버튼 클릭'),
+        onPressed: () => debugPrint('뒤로가기 버튼 클릭'),
       ),
     );
   }
@@ -101,7 +101,7 @@ class SignUpScreen extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () => print('등록 버튼 클릭'),
+            onPressed: () => debugPrint('등록 버튼 클릭'),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF1E232C),
               padding: const EdgeInsets.symmetric(vertical: 18),
@@ -191,15 +191,17 @@ class SignUpScreen extends StatelessWidget {
   }
 
   Widget _buildLoginLink() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    // 좁은 화면이나 큰 글꼴 설정에서도 넘치지 않도록 공간이 모자라면 다음 줄로 넘겨요.
+    return Wrap(
+      alignment: WrapAlignment.center,
+      crossAxisAlignment: WrapCrossAlignment.center,
       children: [
         const Text(
           'Already have an account? ',
           style: TextStyle(color: Color(0xFF1E232C), fontSize: 15),
         ),
         TextButton(
-          onPressed: () => print('Login Now 클릭'),
+          onPressed: () => debugPrint('Login Now 클릭'),
           style: TextButton.styleFrom(padding: EdgeInsets.zero),
           child: const Text(
             'Login Now',

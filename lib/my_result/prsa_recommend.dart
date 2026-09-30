@@ -52,7 +52,7 @@ class ChiangMaiRecommendationScreen extends StatelessWidget {
           ),
           onPressed: () {
             // TODO: 뒤로가기 로직 (필요 시 Navigator.pop(context) 사용)
-            print("뒤로가기 버튼 클릭");
+            debugPrint("뒤로가기 버튼 클릭");
           },
         ),
       ),
@@ -111,7 +111,7 @@ class ChiangMaiRecommendationScreen extends StatelessWidget {
           height: 300,
           width: double.infinity,
           decoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.4),
+            color: Colors.black.withValues(alpha: 0.4),
           ),
         ),
         // 여행지 이름 텍스트

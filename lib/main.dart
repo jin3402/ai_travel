@@ -1,88 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:io' show Platform;
 
-//메인화면
+import 'catalog/screen_catalog.dart';
+
+/// 팀 프로젝트에서 만든 화면 프로토타입을 한곳에서 둘러보는 진입점.
+/// 개별 화면은 `flutter run -t lib/screens/login.dart`처럼 따로 실행할 수도 있어요.
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  String _message = '서버로부터 메시지를 기다리는 중...';
-
-  final String _baseUrl =
-      Platform.isAndroid ? 'http://10.0.2.2:8080' : 'http://localhost:8080';
-
-  // 서버에 데이터를 요청하는 함수
-  Future<void> _fetchMessage() async {
-    try {
-      // 스프링 부트 서버의 /api/hello 주소로 GET 요청
-      final response = await http.get(Uri.parse('$_baseUrl/api/hello'));
-
-      // 응답이 성공적이면 (상태 코드 200)
-      if (response.statusCode == 200) {
-        setState(() {
-          // 화면에 표시될 _message 변수의 값을 서버가 보낸 메시지로 변경합니다.
-          _message = response.body;
-        });
-      } else {
-        // 서버 연결에 실패한 경우
-        setState(() {
-          _message = '서버 연결 실패: ${response.statusCode}';
-        });
-      }
-    } catch (e) {
-      // 그 외 오류가 발생한 경우
-      setState(() {
-        _message = '오류 발생: $e';
-      });
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Flutter & Spring Boot'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            // 서버로부터 받은 메시지를 표시하는 텍스트 위젯
-            Text(
-              _message,
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _fetchMessage,
-              child: const Text('서버에 메시지 요청하기'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+  runApp(const AiTravelPrototypeApp());
 }

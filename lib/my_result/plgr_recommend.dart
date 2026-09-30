@@ -52,7 +52,7 @@ class DubaiRecommendationScreen extends StatelessWidget {
             child: Icon(Icons.arrow_back, color: Colors.black),
           ),
           onPressed: () {
-            print("뒤로가기 버튼 클릭");
+            debugPrint("뒤로가기 버튼 클릭");
           },
         ),
       ),
@@ -107,7 +107,7 @@ class DubaiRecommendationScreen extends StatelessWidget {
           height: 300,
           width: double.infinity,
           decoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.4),
+            color: Colors.black.withValues(alpha: 0.4),
           ),
         ),
         Padding(
