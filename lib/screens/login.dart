@@ -185,8 +185,10 @@ class LoginScreen extends StatelessWidget {
   }
 
   Widget _buildRegisterLink() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    // 좁은 화면이나 큰 글꼴 설정에서도 넘치지 않도록 공간이 모자라면 다음 줄로 넘겨요.
+    return Wrap(
+      alignment: WrapAlignment.center,
+      crossAxisAlignment: WrapCrossAlignment.center,
       children: [
         const Text(
           "Don't have an account? ", // 문구 수정
