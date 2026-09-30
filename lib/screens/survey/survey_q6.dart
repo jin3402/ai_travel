@@ -15,7 +15,7 @@ class FigmaToCodeApp extends StatelessWidget {
         scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
       ),
       home: Scaffold(
-        body: ListView(children: [
+        body: ListView(children: const [
           Vs(),
         ]),
       ),
@@ -24,6 +24,8 @@ class FigmaToCodeApp extends StatelessWidget {
 }
 
 class Vs extends StatelessWidget {
+  const Vs({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -32,7 +34,7 @@ class Vs extends StatelessWidget {
           width: 393,
           height: 852,
           clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(color: Colors.white),
+          decoration: const BoxDecoration(color: Colors.white),
           child: Stack(
             children: [
               Positioned(
@@ -49,7 +51,7 @@ class Vs extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 71,
                 top: 637,
                 child: SizedBox(
@@ -82,7 +84,7 @@ class Vs extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 91,
                 top: 498,
                 child: SizedBox(
@@ -101,7 +103,7 @@ class Vs extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 136,
                 top: 351,
                 child: SizedBox(
@@ -118,7 +120,7 @@ class Vs extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 309,
                 top: 263,
                 child: SizedBox(
@@ -175,7 +177,7 @@ class Vs extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(100),
                     ),
-                    shadows: [
+                    shadows: const [
                       BoxShadow(
                         color: Color(0x3F000000),
                         blurRadius: 4,
@@ -186,7 +188,7 @@ class Vs extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 283,
                 top: 172,
                 child: SizedBox(
@@ -196,7 +198,7 @@ class Vs extends StatelessWidget {
                     '6 / 7',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: const Color(0xFF393232),
+                      color: Color(0xFF393232),
                       fontSize: 25,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w500,
@@ -205,7 +207,7 @@ class Vs extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 47,
                 top: 176,
                 child: SizedBox(
@@ -223,7 +225,7 @@ class Vs extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 87,
                 top: 97,
                 child: SizedBox(
@@ -247,7 +249,7 @@ class Vs extends StatelessWidget {
                 top: 87,
                 child: Container(
                   width: 30,
-                  decoration: ShapeDecoration(
+                  decoration: const ShapeDecoration(
                     shape: RoundedRectangleBorder(
                       side: BorderSide(
                         width: 1,
@@ -262,7 +264,7 @@ class Vs extends StatelessWidget {
                 top: 79,
                 child: Container(
                   width: 30,
-                  decoration: ShapeDecoration(
+                  decoration: const ShapeDecoration(
                     shape: RoundedRectangleBorder(
                       side: BorderSide(
                         width: 1,
@@ -277,7 +279,7 @@ class Vs extends StatelessWidget {
                 top: 71,
                 child: Container(
                   width: 30,
-                  decoration: ShapeDecoration(
+                  decoration: const ShapeDecoration(
                     shape: RoundedRectangleBorder(
                       side: BorderSide(
                         width: 1,
@@ -294,7 +296,7 @@ class Vs extends StatelessWidget {
                   width: 393,
                   height: 45,
                   clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   child: Stack(
                     children: [
                       Positioned(
@@ -308,7 +310,7 @@ class Vs extends StatelessWidget {
                               borderRadius: BorderRadius.circular(32),
                             ),
                           ),
-                          child: Stack(),
+                          child: const Stack(),
                         ),
                       ),
                     ],
@@ -323,9 +325,9 @@ class Vs extends StatelessWidget {
                   height: 39,
                   decoration: ShapeDecoration(
                     shape: RoundedRectangleBorder(
-                      side: BorderSide(
+                      side: const BorderSide(
                         width: 1,
-                        color: const Color(0xFFD8DADC),
+                        color: Color(0xFFD8DADC),
                       ),
                       borderRadius: BorderRadius.circular(10),
                     ),

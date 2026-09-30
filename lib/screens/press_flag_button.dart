@@ -232,8 +232,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return FloatingActionButton(
       onPressed: () {},
       backgroundColor: Colors.black,
-      child: const Icon(Icons.add, color: Colors.white),
       shape: const CircleBorder(),
+      child: const Icon(Icons.add, color: Colors.white),
     );
   }
 
