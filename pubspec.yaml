@@ -1,5 +1,5 @@
 name: ai_travel
-description: "A new Flutter project."
+description: "AI 여행 가이드 앱 팀 프로젝트의 Flutter 화면 프로토타입"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -36,6 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   flutter_svg: ^2.0.10+1
+  http: ^1.5.0
 
 dev_dependencies:
   flutter_test:
