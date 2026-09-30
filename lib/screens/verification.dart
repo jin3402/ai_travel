@@ -158,7 +158,7 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
               Text(
                 '${widget.email} 님에게 코드를 보냈습니다.',
                 style: TextStyle(
-                  color: Colors.black.withOpacity(0.7),
+                  color: Colors.black.withValues(alpha: 0.7),
                   fontSize: 16,
                 ),
               ),
@@ -194,7 +194,7 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
                 child: ElevatedButton(
                   onPressed: () {
                     final code = _controllers.map((c) => c.text).join();
-                    print('입력된 코드: $code');
+                    debugPrint('입력된 코드: $code');
                     // 코드 확인 로직
                   },
                   child:
@@ -229,7 +229,7 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
                   Text(
                     '00:${_start.toString().padLeft(2, '0')}',
                     style: TextStyle(
-                      color: Colors.black.withOpacity(0.7),
+                      color: Colors.black.withValues(alpha: 0.7),
                       fontSize: 16,
                     ),
                   )

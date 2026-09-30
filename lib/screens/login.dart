@@ -71,7 +71,7 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
         ),
-        onPressed: () => print('뒤로가기 버튼 클릭'),
+        onPressed: () => debugPrint('뒤로가기 버튼 클릭'),
       ),
     );
   }
@@ -97,7 +97,7 @@ class LoginScreen extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () => print('로그인 버튼 클릭'),
+            onPressed: () => debugPrint('로그인 버튼 클릭'),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF1E232C),
               padding: const EdgeInsets.symmetric(vertical: 18),
@@ -195,7 +195,7 @@ class LoginScreen extends StatelessWidget {
           style: TextStyle(color: Color(0xFF1E232C), fontSize: 15),
         ),
         TextButton(
-          onPressed: () => print('Register Now 클릭'),
+          onPressed: () => debugPrint('Register Now 클릭'),
           style: TextButton.styleFrom(padding: EdgeInsets.zero),
           child: const Text(
             'Register Now', // 문구 수정

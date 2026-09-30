@@ -69,7 +69,7 @@ class _SurveyScreenState extends State<SurveyScreen> {
           icon: const Icon(Icons.arrow_back, color: Colors.grey),
           onPressed: () {
             // TODO: 뒤로가기 로직 구현
-            print('뒤로가기 버튼 클릭됨');
+            debugPrint('뒤로가기 버튼 클릭됨');
           },
         ),
         const Text(
@@ -80,7 +80,7 @@ class _SurveyScreenState extends State<SurveyScreen> {
           icon: const Icon(Icons.menu, color: Colors.grey),
           onPressed: () {
             // TODO: 메뉴 로직 구현
-            print('메뉴 버튼 클릭됨');
+            debugPrint('메뉴 버튼 클릭됨');
           },
         ),
       ],
@@ -171,7 +171,7 @@ class _SurveyScreenState extends State<SurveyScreen> {
       child: ElevatedButton(
         onPressed: () {
           // TODO: 답변 선택 시 로직 구현 (다음 질문으로 넘어가기 등)
-          print('$text 선택!');
+          debugPrint('$text 선택!');
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xFFC3E0FC),

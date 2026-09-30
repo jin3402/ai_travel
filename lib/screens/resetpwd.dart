@@ -30,7 +30,7 @@ class ResetPasswordApp extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             borderSide: const BorderSide(color: Color(0xFF46A46C), width: 2),
           ),
-          hintStyle: TextStyle(color: Colors.black.withOpacity(0.5)),
+          hintStyle: TextStyle(color: Colors.black.withValues(alpha: 0.5)),
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
         ),
@@ -112,7 +112,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                 Text(
                   '새로운 비밀번호를 입력해주세요.',
                   style: TextStyle(
-                    color: Colors.black.withOpacity(0.7),
+                    color: Colors.black.withValues(alpha: 0.7),
                     fontSize: 16,
                   ),
                 ),
@@ -214,7 +214,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   child: Text.rich(
                     TextSpan(
                       style: TextStyle(
-                          color: Colors.black.withOpacity(0.7), fontSize: 14),
+                          color: Colors.black.withValues(alpha: 0.7), fontSize: 14),
                       children: [
                         const TextSpan(text: '이미 계정이 있으신가요? '),
                         TextSpan(

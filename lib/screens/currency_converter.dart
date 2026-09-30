@@ -181,7 +181,7 @@ class _CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
               decoration: BoxDecoration(
                 color: isSelected
-                    ? Colors.redAccent.withOpacity(0.1)
+                    ? Colors.redAccent.withValues(alpha: 0.1)
                     : Colors.transparent,
                 borderRadius: BorderRadius.circular(20),
               ),
